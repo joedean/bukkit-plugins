@@ -1,0 +1,9 @@
+name: CowShooter
+
+author: Andy Hunt
+
+main: cowshooter.CowShooter
+
+commands:
+
+version: 0.1

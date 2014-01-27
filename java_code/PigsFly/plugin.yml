@@ -1,14 +1,13 @@
 name: PigsFly
 
-author: yourname
+author: Joe Dean
 
 main: pigsfly.PigsFly
 
 commands:
     pigsfly:
-        description: Your description goes here
+        description: Spawn flying pig
     pigsfly_admin:
-        description: Your description goes here
+        description: Spawn flying pig
 
 version: 0.1
-
