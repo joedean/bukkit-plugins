@@ -1,0 +1,14 @@
+name: Cowabunga
+
+author: Joe Dean
+
+main: cowabunga.Cowabunga
+
+commands:
+    cowabunga:
+        description: spawn 10 cows
+    cowabunga_admin:
+        description: spawn 10 cows
+
+version: 0.1
+

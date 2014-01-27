@@ -1,0 +1,14 @@
+name: HelloWorld
+
+author: Joe Dean
+
+main: helloworld.HelloWorld
+
+commands:
+    helloworld:
+        description: Simple hellow world app.  Type hello and see custom message.
+    helloworld_admin:
+        description: Type hello and see message
+
+version: 0.1
+

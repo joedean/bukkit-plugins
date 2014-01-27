@@ -1,0 +1,14 @@
+name: PigsFly
+
+author: yourname
+
+main: pigsfly.PigsFly
+
+commands:
+    pigsfly:
+        description: Your description goes here
+    pigsfly_admin:
+        description: Your description goes here
+
+version: 0.1
+
