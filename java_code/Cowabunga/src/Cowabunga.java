@@ -33,7 +33,7 @@ public class Cowabunga extends JavaPlugin {
 	}
         // ...and finish your code before this line.
         return true;
-        }
+      }
     }
     return false;
   }
