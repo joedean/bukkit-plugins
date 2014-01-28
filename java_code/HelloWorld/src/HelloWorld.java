@@ -29,7 +29,7 @@ public class HelloWorld extends JavaPlugin {
         sender.getServer().broadcastMessage(msg);
         // ...and finish your code before this line.
         return true;
-        }
+      }
     }
     return false;
   }
