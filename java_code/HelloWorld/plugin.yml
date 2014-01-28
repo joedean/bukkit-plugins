@@ -6,9 +6,9 @@ main: helloworld.HelloWorld
 
 commands:
     helloworld:
-        description: Simple hellow world app.  Type hello and see custom message.
+        description: Simple hello world app.  Type "helloworld" at minecraft command prompt and see custom message.
     helloworld_admin:
-        description: Type hello and see message
+        description: Type "helloworld" and see a message.
 
 version: 0.1
 
