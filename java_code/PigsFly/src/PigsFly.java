@@ -42,7 +42,7 @@ public class PigsFly extends JavaPlugin {
         bat.addPotionEffect(potion);
         // ...and finish your code before this line.
         return true;
-        }
+      }
     }
     return false;
   }
