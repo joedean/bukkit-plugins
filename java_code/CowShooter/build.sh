@@ -2,13 +2,24 @@
 #---
 # Excerpted from "Learn to Program with Minecraft Plugins",
 # published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
+# Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
+# We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/ahmine for more book information.
 #---
 
-SERVER=$HOME/Desktop/server
+# Set the variable MCSERVER to ~/Desktop/server
+# unless it's already set
+: ${MCSERVER:=$HOME/minecraft-plugins/server}
+
+BUKKIT=$MCSERVER/craftbukkit.jar
+
+# Make sure that the bukkit jar
+# exists and is readable
+if [ ! -r $BUKKIT ]; then
+    echo "$BUKKIT doesn't seem to exist.  Make sure you have bukkit.jar installed at $MCSERVER and run again.  If your server is not at $MCSERVER, set your MCSERVER environment variable to point to the correct directory."
+    exit 1
+fi
 
 # Make the build directories if they aren't there.
 # Throw away any error if they are.
@@ -26,15 +37,15 @@ NAME=`basename $HERE`
 
 # 1. Compile
 echo "Compiling with javac..."
-javac src/*.java -d bin -classpath $SERVER/craftbukkit.jar -sourcepath src -target 1.6 -g:lines,vars,source -source 1.6 || exit 1
+javac -Xlint:deprecation src/*.java -d bin -classpath $BUKKIT -sourcepath src -target 1.6 -g:lines,vars,source -source 1.6 || exit 1
 
 # 2. Build the jar
 echo "Creating jar file..."
 jar -cf dist/$NAME.jar *.yml -C bin . || exit 1
 
 # 3. Copy to server
-echo "Deploying jar to $SERVER/plugins..."
-test ! -d "$SERVER/plugins" && mkdir -p "$SERVER/plugins"
-cp dist/$NAME.jar $SERVER/plugins || exit 1
+echo "Deploying jar to $MCSERVER/plugins..."
+test ! -d "$MCSERVER/plugins" && mkdir -p "$MCSERVER/plugins"
+cp dist/$NAME.jar $MCSERVER/plugins || exit 1
 
 echo "Completed Successfully."
